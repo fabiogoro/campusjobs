@@ -1,5 +1,12 @@
 class AddCompanyToJob < ActiveRecord::Migration
   def change
-    add_reference :jobs, :company, index: true, foreign_key: true
+    create_table :companies do |t|
+      t.string :name
+      t.string :location
+      t.string :mail
+      t.string :phone
+
+      t.timestamps null: false
+    end
   end
 end
