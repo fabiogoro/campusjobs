@@ -1,0 +1,49 @@
+<%if type=="full" %>
+<%unless job.active? %>
+  <div class="alert alert-danger">Esta vaga está expirada!</div>
+<%end%>
+<div class="col-xs-12 col-sm-9">
+  <p class="pull-right visible-xs">
+    <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+  </p>
+  <div class="jumbotron">
+    <h1><%=job.title%></h1>
+    <p><b>Localização: </b><%=job.location%></p>
+    <p><b>Empresa: </b><%=job.company.name%></p>
+    <p><b>Descrição: </b><%=job.description%></p>
+    <p><b>Categoria: </b><%=job.category.name%></p>
+    <%if job.featured %>
+    <p><i class="glyphicon glyphicon-star"></i><b> Vaga Patrocinada</b></p>
+    <%elsif job.recent? %>
+    <p><i class="glyphicon glyphicon-asterisk"></i><b> Vaga Nova!</b></p>
+    <%elsif job.premium? %>
+    <p><i class="glyphicon glyphicon-briefcase"></i><b> Empresa Premium</b></p>
+    <%end%>
+    <p><%= link_to ' Voltar', root_path, class: "btn btn-default glyphicon glyphicon-chevron-left" %>
+    <%= link_to ' Editar', edit_job_path(job), class: "btn btn-default glyphicon glyphicon-edit" %></p>
+  </div>
+</div>
+<%else%>
+  <%if job.featured %>
+  <div class="col-xs-6 col-lg-4 bordered featured">
+  <%elsif job.recent? %>
+  <div class="col-xs-6 col-lg-4 bordered recent">
+  <%elsif job.premium? %>
+  <div class="col-xs-6 col-lg-4 bordered premium">
+  <%else%>
+  <div class="col-xs-6 col-lg-4 bordered common">
+  <%end%>
+  <h2><%=job.title%></h2>
+  <p><b>Localização: </b><%=job.location%></p>
+  <p><b>Empresa: </b><%=job.company.name%></p>
+  <%if job.featured %>
+  <p><%= link_to ' Featured | Detalhes »', job, class: "btn btn-warning glyphicon glyphicon-star" %></p>
+  <%elsif job.recent? %>
+  <p><%= link_to ' Novo! | Detalhes »', job, class: "btn btn-success glyphicon glyphicon-asterisk" %></p>
+  <%elsif job.premium? %>
+  <p><%= link_to ' Premium | Detalhes »', job, class: "btn btn-danger glyphicon glyphicon-briefcase" %></p>
+  <%else%>
+  <p><%= link_to 'Detalhes »', job, class: "btn btn-info" %></p>
+  <%end%>
+</div><!--/.col-xs-6.col-lg-4-->
+<%end%>

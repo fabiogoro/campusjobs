@@ -1,0 +1,38 @@
+<% if @company.errors.any? %>
+  <div class="alert alert-danger">
+    <h3><%= pluralize(@company.errors.count, "error") %> prohibited this post from being saved:</h3>
+
+    <ul>
+    <% @company.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @company, html: {class: "post-form"} do |f| %>
+  <div class="form-group">
+    <p><%= f.label :name %></p>
+    <p><%= f.text_field :name %></p>
+  </div>
+
+  <div class="form-group">
+    <p><%= f.label :location %></p>
+    <p><%= f.text_field :location %></p>
+  </div>
+
+  <div class="form-group">
+    <p><%= f.label :mail %></p>
+    <p><%= f.text_field :mail %></p>
+  </div>
+
+  <div class="form-group">
+    <p><%= f.label :phone %></p>
+    <p><%= f.text_area :phone %></p>
+  </div>
+
+  <div class="btn-group">
+    <p><%= f.submit "Salvar", class: "btn btn-default" %></p>
+  </div>
+
+<% end %>

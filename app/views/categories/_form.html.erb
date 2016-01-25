@@ -1,0 +1,23 @@
+<% if @category.errors.any? %>
+  <div class="alert alert-danger">
+    <h3><%= pluralize(@category.errors.count, "error") %> prohibited this post from being saved:</h3>
+
+    <ul>
+    <% @category.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @category, html: {class: "post-form"} do |f| %>
+  <div class="form-group">
+    <p><%= f.label :name %></p>
+    <p><%= f.text_field :name %></p>
+  </div>
+
+  <div class="btn-group">
+    <p><%= f.submit "Salvar", class: "btn btn-default" %></p>
+  </div>
+
+<% end %>
