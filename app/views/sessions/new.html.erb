@@ -1,0 +1,22 @@
+<% if flash.now[:danger] %>
+<p class="alert alert-danger"><%=flash.now[:danger]%></p>
+<%end%>
+
+<%= form_for(:session, url: sessions_path, html: {class: "post-form"}) do |f| %>
+  <div class="form-group">
+    <p><%= f.label :mail %></p>
+    <p><%= f.text_field :mail %></p>
+  </div>
+
+  <div class="form-group">
+    <p><%= f.label :password %></p>
+    <p><%= f.password_field :password %></p>
+  </div>
+
+  <div class="btn-group">
+    <p><%= f.submit "Entrar", class: "btn btn-default" %></p>
+  </div>
+
+<% end %>
+
+<p>Novo usuário? <%= link_to "Cadastre-se.", new_user_path %></p>

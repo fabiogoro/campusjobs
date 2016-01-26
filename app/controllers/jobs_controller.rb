@@ -1,4 +1,6 @@
 class JobsController < ApplicationController
+  before_filter :authorize
+  
   def show
     @job = Job.find(params[:id])
   end
