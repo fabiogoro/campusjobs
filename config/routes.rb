@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'home#index'
   resources :jobs, only: [:show, :new, :create, :edit, :update]
   resources :companies, only: [:show, :new, :create, :edit, :update]
   resources :categories, only: [:show, :new, :create]
-  resources :users, only: [:show, :new, :create]
-  resources :sessions, only: [:destroy, :new, :create]
-  get 'login' => 'sessions#new'
-  get '/logout' => 'sessions#destroy'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

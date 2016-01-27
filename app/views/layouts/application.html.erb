@@ -22,16 +22,18 @@
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li class="active"><a href="/">Home</a></li>
+          <% if current_user %>
           <li><a href=<%=new_job_path%>>Cadastre sua vaga</a></li>
+          <%end%>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
-            <li class="navbar-right"><a href='/logout'>Sair</a></li>
-            <li class="navbar-right"><a href=<%=current_user%>>Olá <%=current_user.mail%></a></li>
+            <li class="navbar-right"><a href=<%=destroy_user_session_path%> data-method="delete">Sair</a></li>
+            <li class="navbar-right"><a href='/users/edit'>Olá <%=current_user.email%></a></li>
           <% else %>
-            <li class="navbar-right"><a href="/login">Entrar</a></li>
+            <li class="navbar-right"><a href="/users/sign_in">Entrar</a></li>
           <% end %>
         </ul>
       </div><!-- /.nav-collapse -->
@@ -41,6 +43,16 @@
 
   <div class="container">
     <div class="row row-offcanvas row-offcanvas-right">
+      <% if alert %>
+      <div class="alert alert-danger">
+        <p class="notice"><%= alert %></p>
+      </div>
+      <% end %>
+      <% if notice %>
+      <div class="alert alert-success">
+        <p class="notice"><%= notice %></p>
+      </div>
+      <% end %>
       <%= yield %>
     </div><!--/row-->
 
