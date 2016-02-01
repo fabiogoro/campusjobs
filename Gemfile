@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'carrierwave'
 gem 'cloudinary'
+gem 'refile'
 
 group :development, :test do
   gem 'rspec-rails'
