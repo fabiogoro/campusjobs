@@ -14,7 +14,7 @@ class LogoUploader < CarrierWave::Uploader::Base
 
   version :thumbnail do
     eager
-    resize_to_fit(50, 50)
+    resize_to_fit(80, 80)
   end
 
   def public_id
