@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: do7esei9e
+  api_key: '698887292617354'
+  api_secret: DR7RH4d4Xx1MTP1zOOxxJSdfxLQ
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: do7esei9e
+  api_key: '698887292617354'
+  api_secret: DR7RH4d4Xx1MTP1zOOxxJSdfxLQ
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: do7esei9e
+  api_key: '698887292617354'
+  api_secret: DR7RH4d4Xx1MTP1zOOxxJSdfxLQ
+  enhance_image_tag: true
+  static_image_support: false

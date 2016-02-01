@@ -34,6 +34,7 @@
   <div class="form-group">
     <p><%= f.label :logo %></p>
     <p><%= f.file_field :logo %></p>
+    <%=f.hidden_field(:logo_cache)%>
   </div>
 
   <div class="btn-group">

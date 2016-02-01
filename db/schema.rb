@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160130021346) do
+ActiveRecord::Schema.define(version: 20160201022742) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20160130021346) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+    t.string   "logo"
   end
 
   add_index "companies", ["user_id"], name: "index_companies_on_user_id"
