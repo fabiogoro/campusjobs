@@ -1,28 +1,16 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To run this Ruby on Rails application just follow this steps:
 
-Things you may want to cover:
+* Clone the files to your pc. (git clone git@github.com:fabiogoro/campusjobs.git)
 
-* Ruby version
+* Go to the new folder (cd emprego-ja)
 
-* System dependencies
+* Run 'bundle install'
 
-* Configuration
+* Run 'rake db:migrate'
 
-* Database creation
+* Now you're ready to put the application up locally running 'rails server'
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+I'm assuming that you already have Ruby on Rails installed. For more info on how
+to do that visit: http://guides.rubyonrails.org/getting_started.html
