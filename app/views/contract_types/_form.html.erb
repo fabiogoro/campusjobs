@@ -1,0 +1,23 @@
+<% if @contract_type.errors.any? %>
+  <div class="alert alert-danger">
+    <h3><%= pluralize(@contract_type.errors.count, "error") %> prohibited this post from being saved:</h3>
+
+    <ul>
+    <% @contract_type.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @contract_type, html: {class: "post-form"} do |f| %>
+  <div class="form-group">
+    <p><%= f.label :name %></p>
+    <p><%= f.text_field :name %></p>
+  </div>
+
+  <div class="btn-group">
+    <p><%= f.submit "Salvar", class: "btn btn-default" %></p>
+  </div>
+
+<% end %>

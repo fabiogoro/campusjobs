@@ -1,10 +1,11 @@
 class CategoriesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :show
 
   def show
     @category = Category.find(params[:id])
     @companies = Company.all
     @categories = Category.all
+    @contract_types = ContractType.all
   end
 
   def new

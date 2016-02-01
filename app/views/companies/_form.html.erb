@@ -10,7 +10,7 @@
   </div>
 <% end %>
 
-<%= form_for @company, html: {class: "post-form"} do |f| %>
+<%= form_for @company, html: {class: "post-form", multipart: true} do |f| %>
   <div class="form-group">
     <p><%= f.label :name %></p>
     <p><%= f.text_field :name %></p>
@@ -23,12 +23,17 @@
 
   <div class="form-group">
     <p><%= f.label :mail %></p>
-    <p><%= f.text_field :mail %></p>
+    <p><%= f.email_field :mail %></p>
   </div>
 
   <div class="form-group">
     <p><%= f.label :phone %></p>
-    <p><%= f.text_area :phone %></p>
+    <p><%= f.telephone_field :phone %></p>
+  </div>
+
+  <div class="form-group">
+    <p><%= f.label :logo %></p>
+    <p><%= f.file_field :logo %></p>
   </div>
 
   <div class="btn-group">

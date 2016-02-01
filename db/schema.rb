@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160129182460) do
+ActiveRecord::Schema.define(version: 20160130021346) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -24,6 +24,19 @@ ActiveRecord::Schema.define(version: 20160129182460) do
     t.string   "location"
     t.string   "mail"
     t.string   "phone"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "user_id"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+  end
+
+  add_index "companies", ["user_id"], name: "index_companies_on_user_id"
+
+  create_table "contract_types", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -31,16 +44,18 @@ ActiveRecord::Schema.define(version: 20160129182460) do
   create_table "jobs", force: :cascade do |t|
     t.string   "title"
     t.string   "location"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.string   "description"
     t.boolean  "featured"
     t.integer  "company_id"
     t.integer  "category_id"
+    t.integer  "contract_type_id"
   end
 
   add_index "jobs", ["category_id"], name: "index_jobs_on_category_id"
   add_index "jobs", ["company_id"], name: "index_jobs_on_company_id"
+  add_index "jobs", ["contract_type_id"], name: "index_jobs_on_contract_type_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

@@ -34,7 +34,19 @@
 
  .bordered {
    border: 5px;
-   border-color: grey;
+   border-radius: 10px;
+   padding: 12px;
+   margin-bottom: 20px;
+ }
+ .bordered .title {
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+ }
+ .bordered p {
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
  }
 
  .featured {
@@ -48,6 +60,31 @@
  }
  .common {
    background-color: lightblue;
+ }
+ .logo img {
+   border-style: ridge;
+   border-width: thick;
+   border-color: grey;
+   padding: 0;
+   border-radius: 20px;
+ }
+ .info {
+   text-align: center;
+ }
+ .info hr {
+   border: 0;
+   border-top: 1px solid #CCC;
+ }
+ .navbar-right {
+   width: 30%;
+ }
+ .navbar-right .email {
+  width: 70%;
+ }
+ .navbar-right .email a {
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
  }
 
  /*

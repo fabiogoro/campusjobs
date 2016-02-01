@@ -1,4 +1,4 @@
-class Category < ActiveRecord::Base
+class ContractType < ActiveRecord::Base
   has_many :jobs
   validates :name, presence: true
   validates :name, uniqueness: true

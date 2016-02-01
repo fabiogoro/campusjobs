@@ -4,14 +4,24 @@
     <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
   </p>
   <div class="jumbotron">
-    <h1><%=company.name%></h1>
-    <p><b>Localização: </b><%=company.location%></p>
-    <p><b>Email: </b><%=company.mail%></p>
-    <p><b>Telefone: </b><%=company.phone%></p>
+    <table>
+      <tr>
+        <td class="logo col-xs-2 hidden-xs"><%=image_tag company.logo.url(:medium)%></td>
+        <td class="title col-xs-10">
+          <h1><%=company.name%></h1>
+        </td>
+      </tr>
+    </table>
+    <div class="info">
+      <hr>
+      <p><b>Localização: </b><%=company.location%></p>
+      <p><b>Email: </b><%=company.mail%></p>
+      <p><b>Telefone: </b><%=company.phone%></p>
+    </div>
     <p><%= link_to ' Voltar', root_path, class: "btn btn-default glyphicon glyphicon-chevron-left" %>
-    <%= link_to ' Editar', edit_company_path(company), class: "btn btn-default glyphicon glyphicon-edit" %></p>
+      <%= link_to ' Editar', edit_company_path(company), class: "btn btn-default glyphicon glyphicon-edit" %></p>
   </div>
-  <div class="row col-xs-12">
+  <div class="row">
     <%= render company.jobs_active, type: "home" %>
   </div><!--/row-->
 </div><!--/.col-xs-12.col-sm-9-->

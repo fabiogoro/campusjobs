@@ -12,6 +12,7 @@
     <p><b>Empresa: </b><%=job.company.name%></p>
     <p><b>Descrição: </b><%=job.description%></p>
     <p><b>Categoria: </b><%=job.category.name%></p>
+    <p><b>Tipo de contrato: </b><%=job.contract_type.name%></p>
     <%if job.featured %>
     <p><i class="glyphicon glyphicon-star"></i><b> Vaga Patrocinada</b></p>
     <%elsif job.recent? %>
@@ -24,26 +25,28 @@
   </div>
 </div>
 <%else%>
-  <%if job.featured %>
-  <div class="col-xs-6 col-lg-4 bordered featured">
-  <%elsif job.recent? %>
-  <div class="col-xs-6 col-lg-4 bordered recent">
-  <%elsif job.premium? %>
-  <div class="col-xs-6 col-lg-4 bordered premium">
-  <%else%>
-  <div class="col-xs-6 col-lg-4 bordered common">
-  <%end%>
-  <h2><%=job.title%></h2>
-  <p><b>Localização: </b><%=job.location%></p>
-  <p><b>Empresa: </b><%=job.company.name%></p>
-  <%if job.featured %>
-  <p><%= link_to ' Featured | Detalhes »', job, class: "btn btn-warning glyphicon glyphicon-star" %></p>
-  <%elsif job.recent? %>
-  <p><%= link_to ' Novo! | Detalhes »', job, class: "btn btn-success glyphicon glyphicon-asterisk" %></p>
-  <%elsif job.premium? %>
-  <p><%= link_to ' Premium | Detalhes »', job, class: "btn btn-danger glyphicon glyphicon-briefcase" %></p>
-  <%else%>
-  <p><%= link_to 'Detalhes »', job, class: "btn btn-info" %></p>
-  <%end%>
-</div><!--/.col-xs-6.col-lg-4-->
+  <div class="col-xs-6 col-lg-4 ">
+    <%if job.featured %>
+    <div class="bordered featured">
+    <%elsif job.recent? %>
+    <div class="bordered recent">
+    <%elsif job.premium? %>
+    <div class="bordered premium">
+    <%else%>
+    <div class="bordered common">
+    <%end%>
+      <h3 class="title"><%=job.title%></h3>
+      <p><b>Localização: </b><%=job.location%></p>
+      <p><b>Empresa: </b><%=job.company.name%></p>
+      <%if job.featured %>
+      <p><a href=<%=job_path(job)%> class="btn btn-warning"><i class="glyphicon glyphicon-star"></i><span class="hidden-xs"> Featured |</span> Detalhes »</a></p>
+      <%elsif job.recent? %>
+      <p><a href=<%=job_path(job)%> class="btn btn-success"><i class="glyphicon glyphicon-asterisk"></i><span class="hidden-xs"> Novo! |</span> Detalhes »</a></p>
+      <%elsif job.premium? %>
+      <p><a href=<%=job_path(job)%> class="btn btn-danger"><i class="glyphicon glyphicon-briefcase"></i><span class="hidden-xs"> Premium |</span> Detalhes »</a></p>
+      <%else%>
+      <p><%= link_to 'Detalhes »', job, class: "btn btn-info" %></p>
+      <%end%>
+    </div>
+  </div><!--/.col-xs-6.col-lg-4-->
 <%end%>

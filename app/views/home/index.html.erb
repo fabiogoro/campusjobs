@@ -3,12 +3,12 @@
     <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
   </p>
   <div class="jumbotron">
-    <h1>Emprego Já!</h1>
+    <h1>CampusJobs</h1>
     <p>Em parceria com as melhores empresas para se trabalhar no mundo,
-    aqui no Emprego Já você conseguirá encontrar a oportunidade que
+    aqui no CampusJobs você conseguirá encontrar a oportunidade que
     sempre sonhou. O que está esperando? Participe!</p>
   </div>
-  <div class="row col-xs-12">
+  <div class="row">
     <%= render @jobs, type: "home" %>
   </div><!--/row-->
 </div><!--/.col-xs-12.col-sm-9-->
@@ -22,5 +22,10 @@
   <div class="list-group">
     <h3>Categorias</h3>
     <%= render @categories, type: "home", active: "none" %>
+  </div>
+
+  <div class="list-group">
+    <h3>Tipo de Contratação</h3>
+    <%= render @contract_types, type: "home", active: "none" %>
   </div>
 </div><!--/.sidebar-offcanvas-->

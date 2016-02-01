@@ -39,6 +39,12 @@
   </div>
 
   <div class="form-group">
+    <p><%= f.label :contract_type %></p>
+    <p><%= f.collection_select :contract_type_id, @contract_type, :id, :name %>
+    <%= link_to '+', new_contract_type_path, class: "btn btn-default glyphicon"%></p>
+  </div>
+
+  <div class="form-group">
     <p><%= f.label :featured %></p>
     <p><%= f.check_box :featured %></p>
   </div>

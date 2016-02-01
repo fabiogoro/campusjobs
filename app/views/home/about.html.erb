@@ -1,0 +1,42 @@
+<div class="col-xs-12 col-sm-9">
+  <div class="jumbotron">
+    <h1>CampusJobs</h1>
+    <p>Este site foi desenvolvido por Fábio Goródscy durante curso na Campus Code.
+    Ele foi desenvolvido em Ruby on Rails, utilizando Bootstrap para interface.</p>
+    <p><%= link_to ' Voltar', root_path, class: "btn btn-default glyphicon glyphicon-chevron-left" %></p>
+  </div>
+  <div class="row">
+    <div class="col-xs-6 col-lg-4 ">
+      <div class="bordered common">
+        <h3 class="title">Ex 1</h3>
+        <p><b>Localização: </b>Lugar</p>
+        <p><b>Empresa: </b>Empresa</p>
+        <p><%= link_to 'Detalhes »', '#', class: "btn btn-info" %></p>
+      </div>
+    </div><!--/.col-xs-6.col-lg-4-->
+    <div class="col-xs-6 col-lg-4 ">
+      <div class="bordered premium">
+        <h3 class="title">Ex 1</h3>
+        <p><b>Localização: </b>Lugar</p>
+        <p><b>Empresa: </b>Empresa</p>
+        <p><a href='#' class="btn btn-danger"><i class="glyphicon glyphicon-briefcase"></i><span class="hidden-xs"> Premium |</span> Detalhes »</a></p>
+      </div>
+    </div><!--/.col-xs-6.col-lg-4-->
+    <div class="col-xs-6 col-lg-4 ">
+      <div class="bordered recent">
+        <h3 class="title">Ex 1</h3>
+        <p><b>Localização: </b>Lugar</p>
+        <p><b>Empresa: </b>Empresa</p>
+        <p><a href='#' class="btn btn-success"><i class="glyphicon glyphicon-asterisk"></i><span class="hidden-xs"> Novo! |</span> Detalhes »</a></p>
+      </div>
+    </div><!--/.col-xs-6.col-lg-4-->
+    <div class="col-xs-6 col-lg-4 ">
+      <div class="bordered featured">
+        <h3 class="title">Ex 1</h3>
+        <p><b>Localização: </b>Lugar</p>
+        <p><b>Empresa: </b>Empresa</p>
+        <p><a href='#' class="btn btn-warning"><i class="glyphicon glyphicon-star"></i><span class="hidden-xs"> Featured |</span> Detalhes »</a></p>
+      </div>
+    </div><!--/.col-xs-6.col-lg-4-->
+  </div><!--/row-->
+</div><!--/.col-xs-12.col-sm-9-->
