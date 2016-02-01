@@ -9,7 +9,7 @@ class LogoUploader < CarrierWave::Uploader::Base
 
   version :standard do
     process :eager => true
-    process :resize_to_fill => [300, 300, :north]
+    process :resize_to_fill => [200, 200]
   end
 
   version :thumbnail do

@@ -6,7 +6,7 @@
   <div class="jumbotron">
     <table>
       <tr>
-        <% unless company.logo_url.nil? %><td class="logo col-xs-2 hidden-xs"><%=image_tag(company.logo_url)%></td><%end%>
+        <% unless company.logo_url.nil? %><td class="logo col-xs-2 hidden-xs"><%=image_tag(company.logo_url(:standard))%></td><%end%>
         <td class="title col-xs-10">
           <h1><%=company.name%></h1>
         </td>
